@@ -1,0 +1,169 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+
+html {
+  /* background: linear-gradient(to top right, black, #4b1f99); */
+  background: linear-gradient(to top right, black, #4d683c);
+  background-size: cover;
+  height: 100%;
+}
+body {
+  font-family: sans-serif, Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding-top: 1%;
+  background-position: center;
+  font-size: larger;
+}
+h1,
+h2 {
+  color: white;
+}
+div {
+  color: white;
+}
+.topleft {
+  position: absolute;
+  top: 8px;
+  left: 15px;
+  font-size: 18px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.video-container {
+  width: 50vw;
+  padding: 0 1rem;
+}
+
+.match-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.match-info {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  gap: 5px;
+  padding-bottom: 10px;
+  width: 60vw;
+}
+
+.match-heading {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.day-match {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid gray;
+  width: auto;
+}
+
+.day {
+  text-align: center;
+}
+
+.match {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  border-top: 3px solid gray;
+}
+
+.teams {
+  display: flex;
+  flex-direction: column;
+  padding-left: 3px;
+}
+
+.time {
+  margin-left: 45px;
+  white-space: nowrap;
+  padding-right: 3px;
+}
+
+.team1 {
+  white-space: nowrap;
+}
+
+.team2 {
+  border-top: 3px dotted gray;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 767.98px) {
+  html {
+    font-size: 10px;
+  }
+  .topleft {
+    width: 150px;
+    top: 0;
+    left: 0;
+  }
+
+  .main-title {
+    margin-top: 50px;
+  }
+
+  .match-info {
+    width: 85vw;
+  }
+
+  .video-container {
+    padding: 0 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023.98px) {
+  html {
+    font-size: 13px;
+  }
+
+  .topleft {
+    width: 150px;
+  }
+
+  .main-title {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .video-container {
+    width: 80vw;
+  }
+}
