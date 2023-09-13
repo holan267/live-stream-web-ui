@@ -73,11 +73,13 @@ div {
 
 .match-info {
   display: flex;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  gap: 5px;
-  padding-bottom: 10px;
+  /* overflow-x: scroll;
+  overflow-y: hidden; */
+  justify-content: center;
   width: 60vw;
+  flex-wrap: wrap;
+  /* white-space: nowrap; */
+  margin-left: -5px;
 }
 
 .match-heading {
@@ -89,7 +91,10 @@ div {
   display: flex;
   flex-direction: column;
   border: 3px solid gray;
-  width: auto;
+  width: 213px;
+  /* flex-shrink: 0; */
+  margin-left: 5px;
+  margin-top: 5px;
 }
 
 .day {
