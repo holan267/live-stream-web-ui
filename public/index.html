@@ -1,197 +1,345 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <title>
-      Tường thuật trực tiếp - Giải bóng chuyền quân đội các nước Asean
-    </title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Livestream Viewer" />
-    <meta name="author" content="SitePoint" />
-    <meta property="og:title" content="Livestream Viewer" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content="Livestream Viewer" />
 
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+<head>
+  <title>
+    Tường thuật trực tiếp - Giải bóng chuyền quân đội các nước Asean
+  </title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Livestream Viewer" />
+  <meta name="author" content="SitePoint" />
+  <meta property="og:title" content="Livestream Viewer" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="Livestream Viewer" />
 
-    <link href="https://vjs.zencdn.net/7.21.5/video-js.css" rel="stylesheet" />
-    <link
-      href="https://unpkg.com/silvermine-videojs-quality-selector@1.1.2/dist/css/quality-selector.css"
-      rel="stylesheet"
-    />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/bootstrap-datepicker3.min.css" />
+  <link rel="stylesheet" href="css/bootstrap-overwrite.min.css" />
+  <link rel="stylesheet" href="css/theme.min.css" />
 
-    <!-- <script src="https://unpkg.com/video.js@7/dist/video.min.js"></script> -->
-    <script src="https://vjs.zencdn.net/7.21.5/video.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-quality-levels/2.0.9/videojs-contrib-quality-levels.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/videojs-hls-quality-selector@1.1.1/dist/videojs-hls-quality-selector.min.js"></script>
-  </head>
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
 
-  <body>
-    <a href="http://qpvn.vn">
-      <img
-        src="QPVN-logo.png"
-        alt="qpvn.vn Logo"
-        width="200px"
-        class="topleft"
-      />
-    </a>
-    <h1 class="main-title">Tường thuật trực tiếp</h1>
-    <h2>Giải bóng chuyền quân đội các nước Asean</h2>
+  <script src="scripts/jquery-2.1.3.min.js"></script>
+  <script src="scripts/bootstrap.min.js"></script>
+  <script src="scripts/bootstrap-datepicker.min.js"></script>
+  <script src="scripts/jquery.resize.min.js"></script>
 
-    <br />
+  <link href="https://vjs.zencdn.net/7.21.5/video-js.css" rel="stylesheet" />
+  <link href="https://unpkg.com/silvermine-videojs-quality-selector@1.1.2/dist/css/quality-selector.css"
+    rel="stylesheet" />
 
-    <div class="wrapper">
-      <div class="video-wrapper">
-        <div class="video-container">
-          <!-- <b id="statusBar" hidden="True" class="statusText"> Status: </b>
-      <b id="viewers" hidden="True" class="statusTime"> Viewers: </b>
-      <br />
-      <br /> -->
-          <video
-            id="videojs"
-            class="video-js vjs-fluid vjs-default-skin vjs-big-play-centered"
-            controls
-            preload="auto"
-            autoplay
-            liveui="true"
-          >
-            <source
-              src="http://27.76.137.122:1935/standard/smil:standard.smil/playlist.m3u8"
-              type="application/x-mpegURL"
-            />
-            <p class="vjs-no-js">
-              To view this video please enable JavaScript, and consider
-              upgrading to a web browser that
-              <a href="https://videojs.com/html5-video-support/" target="_blank"
-                >supports HTML5 video</a
-              >
-            </p>
-          </video>
-        </div>
-      </div>
-      <h2 class="match-heading">Lịch thi đấu</h2>
-      <div class="match-wrapper">
-        <div class="match-info">
-          <div class="day-match">
-            <div class="day">Ngày 12/09/2023</div>
-            <div class="match">
-              <div class="teams">
-                <span class="team1">Viet nam</span>
-                <span class="team2">Lao</span>
-              </div>
-              <div class="time">12:00 AM</div>
-            </div>
-            <div class="match">
-              <div class="teams">
-                <span class="team1">Indonesia</span>
-                <span class="team2">Thai lan</span>
-              </div>
-              <div class="time">12:00 AM</div>
-            </div>
-            <div class="match">
-              <div class="teams">
-                <span class="team1">Indonesia</span>
-                <span class="team2">Thai lan</span>
-              </div>
-              <div class="time">12:00 AM</div>
-            </div>
-          </div>
-          <br />
-          <div class="day-match">
-            <div class="day">Ngày 13/09/2023</div>
-            <div class="match">
-              <div class="teams">
-                <span class="team1">Viet nam</span>
-                <span class="team2">Malaysia</span>
-              </div>
-              <div class="time">12:00 AM</div>
-            </div>
-            <div class="match">
-              <div class="teams">
-                <span class="team1">Lao</span>
-                <span class="team2">Thai lan</span>
-              </div>
-              <div class="time">12:00 AM</div>
-            </div>
-          </div>
+  <!-- <script src="https://unpkg.com/video.js@7/dist/video.min.js"></script> -->
+  <script src="https://vjs.zencdn.net/7.21.5/video.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-quality-levels/2.0.9/videojs-contrib-quality-levels.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/videojs-hls-quality-selector@1.1.1/dist/videojs-hls-quality-selector.min.js"></script>
+</head>
 
-          <br />
-          <div class="day-match">
-            <div class="day">Ngày 14/09/2023</div>
-            <div class="match">
-              <div class="teams">
-                <span class="team1">Viet nam</span>
-                <span class="team2">Malaysia</span>
-              </div>
-              <div class="time">12:00 AM</div>
-            </div>
-            <div class="match">
-              <div class="teams">
-                <span class="team1">Lao</span>
-                <span class="team2">Thai lan</span>
-              </div>
-              <div class="time">12:00 AM</div>
-            </div>
-          </div>
-          <br />
-          <div class="day-match">
-            <div class="day">Ngày 15/09/2023</div>
-            <div class="match">
-              <div class="teams">
-                <span class="team1">Viet nam</span>
-                <span class="team2">Malaysia</span>
-              </div>
-              <div class="time">12:00 AM</div>
-            </div>
-            <div class="match">
-              <div class="teams">
-                <span class="team1">Lao</span>
-                <span class="team2">Thai lan</span>
-              </div>
-              <div class="time">12:00 AM</div>
-            </div>
-          </div>
-          <br />
-          <div class="day-match">
-            <div class="day">Ngày 16/09/2023</div>
-            <div class="match">
-              <div class="teams">
-                <span class="team1">Viet nam</span>
-                <span class="team2">Malaysia</span>
-              </div>
-              <div class="time">12:00 AM</div>
-            </div>
-            <div class="match">
-              <div class="teams">
-                <span class="team1">Lao</span>
-                <span class="team2">Thai lan</span>
-              </div>
-              <div class="time">12:00 AM</div>
-            </div>
-          </div>
-          <br />
-          <div class="day-match">
-            <div class="day">Ngày 17/09/2023</div>
-            <div class="match">
-              <div class="teams">
-                <span class="team1">Viet nam</span>
-                <span class="team2">Malaysia</span>
-              </div>
-              <div class="time">12:00 AM</div>
-            </div>
-            <div class="match">
-              <div class="teams">
-                <span class="team1">Lao</span>
-                <span class="team2">Thai lan</span>
-              </div>
-              <div class="time">12:00 AM</div>
-            </div>
+<body>
+  <section id="header" class="hidden-xs visible-sm visible-md visible-lg qpv-holiday-style"
+    style="background: url(images/bg-banner.jpg) repeat center;">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 qpv-padding">
+          <div class="col-md-3 col-sm-3 qpv-padding-top">
+            <a href="/">
+              <img class="logo" width="180" alt="logo" src="images/qpvn-logo.png">
+            </a>
           </div>
         </div>
       </div>
     </div>
-    <script src="script.js"></script>
-  </body>
+
+  </section>
+  <section id="menu"></section>
+  <section id="content">
+    <div id="page-home">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+          <legend>
+              <div class="qpvn-livetv" style="font-size: 16px;">
+                  <span><i class="fa fa-television"></i>Tường thuật trực tiếp</span>
+              </div>
+          </legend>
+          <legend>
+              <div class="qpvn-livetv" style="font-size: 14px;">
+                  <span><i class="fa fa-television"></i>Giải bóng chuyền quân đội các nước Asean</span>
+              </div>
+          </legend>
+
+          <div class="wrapper">
+            <div class="video-wrapper">
+              <div class="video-container">
+                <video id="videojs" class="video-js vjs-fluid vjs-default-skin vjs-big-play-centered" controls
+                  preload="auto" autoplay liveui="true">
+                  <source src="http://27.76.137.122:1935/standard/smil:standard.smil/playlist.m3u8"
+                    type="application/x-mpegURL" />
+                  <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider
+                    upgrading to a web browser that
+                    <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                  </p>
+                </video>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <div id="schedule">
+              <div class="row schedule-select">
+                <ul class="nav nav-pills nav-justified theme-tabs">
+                <li class="active"><a href="#">Lịch thi đấu</a></li>
+            </ul>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div id="schedule-table">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 program-table-container" id="program-table">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td rowspan="3">
+                              <div class="day">Ngày 12/09/2023</div>
+                            </td>
+                            <td>                              
+                              <div class="match">
+                                <div class="teams">
+                                  <span class="team1">Viet nam</span>
+                                  <span class="team2">Lao</span>
+                                </div>
+                                <div class="time">12:00 AM</div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="match">
+                                <div class="teams">
+                                  <span class="team1">Indonesia</span>
+                                  <span class="team2">Thai lan</span>
+                                </div>
+                                <div class="time">12:00 AM</div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="match">
+                                <div class="teams">
+                                  <span class="team1">Indonesia</span>
+                                  <span class="team2">Thai lan</span>
+                                </div>
+                                <div class="time">12:00 AM</div>
+                              </div>
+                            </td>
+                          </tr>
+
+                          
+                          <tr>
+                            <td rowspan="2">
+                              <div class="day">Ngày 13/09/2023</div>
+                            </td>
+                            <td>                        
+                              <div class="match">
+                                <div class="teams">
+                                  <span class="team1">Viet nam</span>
+                                  <span class="team2">Malaysia</span>
+                                </div>
+                                <div class="time">12:00 AM</div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="match">
+                                <div class="teams">
+                                  <span class="team1">Lao</span>
+                                  <span class="team2">Thai lan</span>
+                                </div>
+                                <div class="time">12:00 AM</div>
+                              </div>
+                            </td>
+                          </tr>
+
+                          
+                          <tr>
+                            <td rowspan="2">
+                              <div class="day">Ngày 14/09/2023</div>
+                            </td>
+                            <td>                       
+                              <div class="match">
+                                <div class="teams">
+                                  <span class="team1">Viet nam</span>
+                                  <span class="team2">Malaysia</span>
+                                </div>
+                                <div class="time">12:00 AM</div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="match">
+                                <div class="teams">
+                                  <span class="team1">Lao</span>
+                                  <span class="team2">Thai lan</span>
+                                </div>
+                                <div class="time">12:00 AM</div>
+                              </div>
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                            <td rowspan="2">
+                              <div class="day">Ngày 15/09/2023</div>
+                            </td>
+                            <td>                  
+                              <div class="match">
+                                <div class="teams">
+                                  <span class="team1">Viet nam</span>
+                                  <span class="team2">Malaysia</span>
+                                </div>
+                                <div class="time">12:00 AM</div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="match">
+                                <div class="teams">
+                                  <span class="team1">Lao</span>
+                                  <span class="team2">Thai lan</span>
+                                </div>
+                                <div class="time">12:00 AM</div>
+                              </div>
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                            <td rowspan="2">
+                              <div class="day">Ngày 16/09/2023</div>
+                            </td>
+                            <td>                  
+                              <div class="match">
+                                <div class="teams">
+                                  <span class="team1">Viet nam</span>
+                                  <span class="team2">Malaysia</span>
+                                </div>
+                                <div class="time">12:00 AM</div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="match">
+                                <div class="teams">
+                                  <span class="team1">Lao</span>
+                                  <span class="team2">Thai lan</span>
+                                </div>
+                                <div class="time">12:00 AM</div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td rowspan="2">
+                              <div class="day">Ngày 17/09/2023</div>
+                            </td>
+                            <td>                  
+                              <div class="match">
+                                <div class="teams">
+                                  <span class="team1">Viet nam</span>
+                                  <span class="team2">Malaysia</span>
+                                </div>
+                                <div class="time">12:00 AM</div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="match">
+                                <div class="teams">
+                                  <span class="team1">Lao</span>
+                                  <span class="team2">Thai lan</span>
+                                </div>
+                                <div class="time">12:00 AM</div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>                
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="footer" class="hidden-xs  hidden-sm">
+
+    <div class="container-fluid contact2"
+      style="background: rgba(0, 0, 0, 0) url('images/bg-footer.jpg') repeat scroll 0 0;">
+      <div class="container qpv-without-padding">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 logo">
+            <div class="hidden-xs hidden-sm">
+              <a href="/">
+                <img src="images/qpvn-logo.png" alt="logo" width="200">
+
+              </a>
+            </div>
+            <div class="hidden-md hidden-lg" style="text-align: center;">
+              <a href="/">
+                <img src="/css/newStyle/img/logo2.png" alt="logo" width="200">
+              </a>
+
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 contact-link">
+            <div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 qpv-without-padding">
+                <a href="javascript:void(0)" style="font-weight: bold;">Chịu trách nhiệm nội dung: Giám đốc - Thiếu
+                  tướng NGUYỄN KIM TÔN</a><br class="visible-xs">
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 qpv-without-padding">
+                <a href="javascript:void(0)"><i class="fa fa-home"></i> Số 165 Xã Đàn, Đống Đa, Hà Nội</a><br>
+                <a href="javascript:void(0)"><i class="fa fa-envelope"></i> quantriweb@qpvn.vn</a><br
+                  class="visible-xs">
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 qpv-without-padding">
+                <a href="javascript:void(0)"><i class="fa fa-fax"></i> 02462661599</a><br>
+                <a href="javascript:void(0)"><i class="fa fa-phone-square"></i> 0975901959</a>
+              </div>
+            </div>
+          </div>
+          <div style="clear: both;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid copyright-2017">
+      <div class="container  qpv-without-padding">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+            <span>Giấy phép số: 121/GP-TTĐT Cấp ngày 24-08-2015 / Bản quyền thuộc về Kênh Truyền hình Quốc phòng Việt
+              Nam</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="script.js"></script>
+</body>
+
 </html>
